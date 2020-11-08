@@ -1,13 +1,6 @@
 # SPL211-Testers
 
 8/11/20 19:11 - פורסם גם טסט שבודק את חוק החמש עבור עצים
-כדי להשתמש בו תעתיקו אותו במקום ה 
-main
-
-int main(int argc,char **argv){
-  FiveRuleTestTree<MaxRankTree>();
-  FiveRuleTestTree<RootTree>();
-}
   
   
 7/11/20 17:50 - נוסף קובץ טסט של 10 אלף טסטים שכולל בדיקה של כל העצים. 
