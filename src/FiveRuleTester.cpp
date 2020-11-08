@@ -4,6 +4,15 @@
 template <class T>
 
 using namespace std;
+/*
+Usage -- >
+Replace with main.cpp
+
+int main(int argc,char **argv){
+  FiveRuleTestTree<MaxRankTree>();
+  FiveRuleTestTree<RootTree>();
+}
+*/
 
 void FiveRuleTestTree() {
     std::cout << "\r\n-------------------------- Tree Checks -------------------------" << std::endl;
