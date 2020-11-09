@@ -1,5 +1,15 @@
 #SPL211-Tester_Assignment_1
 
+9/11/20 תוקן באג שנגע לאופן השמירה.
+שימו לב שהשמירה של ה
+json
+נעשית באופן הבא-
+"./output.json"
+
+Ref:
+https://www.cs.bgu.ac.il/~spl211/Assignments/Assignment_1Forum?action=show-thread&id=a991c46023b90828a78a88ea644d3706
+
+
 8/11/20 19:11 - פורסם גם טסט שבודק את חוק החמש עבור עצים
   
   
