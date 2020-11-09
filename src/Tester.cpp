@@ -71,40 +71,40 @@ void Tester::generateTests() {
 
     std::string treeType = "M";
     generatedTest["tree"] = treeType;
-    std::ofstream outWriter("../generatedTest.json");
+    std::ofstream outWriter("./generatedTest.json");
     outWriter << generatedTest;
     outWriter.close();
     //Run your own simulation
-    Session     testSession("../generatedTest.json");
+    Session     testSession("./generatedTest.json");
     testSession.simulate();
     //Parse results and save to json format ;)
-    std::string parsedData = Tester::readAndGetFile("../output.json");
+    std::string parsedData = Tester::readAndGetFile("./output.json");
     std::cout << parsedData << std::endl;
     entireTest["graph"]  = graphMatrix;
     entireTest["agents"] = generatedTest["agents"];
     entireTest["tree"] = generatedTest["tree"];
     entireTest["resultRun"] = parsedData;
 
-    std::ofstream testAppender("../tests.json",std::ios_base::app);
+    std::ofstream testAppender("./tests.json",std::ios_base::app);
     testAppender << entireTest << "\r\n" ;
     testAppender.close();
 }
 void Tester::runTests() {
-    std::ifstream resultFile("../tests.json");
+    std::ifstream resultFile("./tests.json");
     std::string parsedData;
     if (resultFile.is_open()) {
         std::string line;
         while (std::getline(resultFile, line)) {
               json j = json::parse(line);
               std::string   testResult = j["resultRun"];
-              std::ofstream testAppender("../run.json");
+              std::ofstream testAppender("./run.json");
               testAppender << j;
               testAppender.close();
 
-              Session s("../run.json");
+              Session s("./run.json");
               s.simulate();
               //Reading results in Output.json
-              std::string resultStr = Tester::readAndGetFile("../output.json");
+              std::string resultStr = Tester::readAndGetFile("./output.json");
               if(resultStr == testResult) {
                   std::cout << "Passed Test! " << std::endl;
                   numPassedTests ++;
