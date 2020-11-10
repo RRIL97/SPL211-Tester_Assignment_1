@@ -85,12 +85,12 @@ void Tester::generateTests() {
     entireTest["tree"] = generatedTest["tree"];
     entireTest["resultRun"] = parsedData;
 
-    std::ofstream testAppender("./tests.json",std::ios_base::app);
+    std::ofstream testAppender("../tests.json",std::ios_base::app);
     testAppender << entireTest << "\r\n" ;
     testAppender.close();
 }
 void Tester::runTests() {
-    std::ifstream resultFile("./tests.json");
+    std::ifstream resultFile("../tests.json");
     std::string parsedData;
     if (resultFile.is_open()) {
         std::string line;
