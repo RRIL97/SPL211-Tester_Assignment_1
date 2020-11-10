@@ -3,17 +3,6 @@
 
 template <class T>
 
-using namespace std;
-/*
-Usage -- >
-Replace with main.cpp
-
-int main(int argc,char **argv){
-  FiveRuleTestTree<MaxRankTree>();
-  FiveRuleTestTree<RootTree>();
-}
-*/
-
 void FiveRuleTestTree() {
     std::cout << "\r\n-------------------------- Tree Checks -------------------------" << std::endl;
     std::cout << "Tree Type - " << typeid(T).name() << std::endl;
@@ -25,14 +14,11 @@ void FiveRuleTestTree() {
 
     std::cout << "------Copy Test------" << std::endl;
     T test3 = *test1; //Tree Copy Constructor Tester, It shall choose the utilize the copy constructor since it is not initialized!
-    delete(test1);
-    if(test1->getChildren().size () == 0 && test3.getChildren().size() == 1) {
-         if(test3.getChildren()[0]->getRootLabel() == 3){
-             std::cout << "Passed | Copy Constructor Test" << std::endl;
-         }else
-             std::cout << "Failed | Copy Constructor Test" << std::endl;
-    }
-
+    delete(test1); 
+    if(test3.getChildren()[0]->getRootLabel() == 3){
+            std::cout << "Passed | Copy Constructor Test" << std::endl;
+        }else
+            std::cout << "Failed | Copy Constructor Test" << std::endl;
     std::cout << "\r\n------Assignment Test------" << std::endl;
     T      testAssignment(5);
     testAssignment = (test3); //Assignment Constructor
@@ -64,3 +50,9 @@ void FiveRuleTestTree() {
         std::cout << "Failed | Tree Assignment Constructor Test" << std::endl;
     std::cout << "-----------------------\r\n\r\n\n" << std::endl;
 }
+int main(int argc,char **argv){
+    FiveRuleTestTree<MaxRankTree>();
+    FiveRuleTestTree<RootTree>();
+}
+
+using namespace std;
