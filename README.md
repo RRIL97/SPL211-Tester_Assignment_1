@@ -3,8 +3,8 @@
 12/11/20 - 
 
 -------
-Fixed a bug related to duplication of vertices. (upon generation of tests)
-Changed the program flow to detect infected vertices that are not sorted.
+*Fixed a bug related to duplication of vertices. (upon generation of tests)
+*Changed the program flow to detect infected vertices that are not sorted.
 
 -------
 9/11/20
