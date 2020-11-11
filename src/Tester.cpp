@@ -54,21 +54,22 @@ void Tester::generateTests() {
         }
     }
     std::vector<jsonAgent> agentList (totalAgentListSize,jsonAgent());
+    std::vector<bool> usedStartingPoints(numNodesInGraph,false);
     for(int i = 0; i < totalAgentListSize ;i++)
     {
-        std::vector<bool> usedStartingPoints(totalAgentListSize,false);
         if(i < numContactors){
             agentList[i].idStart = -1;
             agentList[i].type    = "C";
         }else {
-            int randStartingPoint = ( rand () % (numNodesInGraph-1)) +1;
+            int randStartingPoint = ( rand () % (numNodesInGraph));
             while(usedStartingPoints[randStartingPoint]){
-                randStartingPoint=( rand () % (numNodesInGraph-1)) +1;
+                randStartingPoint=( rand () % (numNodesInGraph)) ;
             }
             usedStartingPoints[randStartingPoint]=true;
-               agentList[i].idStart = randStartingPoint;
-               agentList[i].type    = "V";
-           }
+            agentList[i].idStart = randStartingPoint;
+
+            agentList[i].type    = "V";
+        }
     }
     agentsToJson(generatedTest,agentList);
     for(int i = 0 ; i < graphMatrix.size(); i++)
