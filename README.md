@@ -2,8 +2,9 @@
 
 12/11/20 - 
 
+-------
 Fixed bug related to duplication of vertices.
-Changed the program flow to detect infected vertices (Both on sorted and unsorted outputs are fine now)
+Changed the program flow to detect infected vertices that are not sorted.
 
 -------
 9/11/20
