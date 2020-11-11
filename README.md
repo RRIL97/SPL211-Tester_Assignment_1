@@ -1,5 +1,9 @@
 #SPL211-Tester_Assignment_1
 
+12/11/20 - Fixed bug related to duplicates among vertices.
+Changed the program flow to detect infected vertices (Both on sorted and unsorted)
+
+-------
 9/11/20
 -------
 השמירה צריכה להיות בפורמט הבא
